@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Condensed', sans-serif;  
+}
+body{
+    background: #EEE;
+}
+header{
+    text-align: center;
+    padding: 20px;
+}
+.item-clases{
+    padding-left: 50px;
+}
+.items{
+    padding-left: 50px;
+    margin: 10px;
+}
+.parrafo-expl{
+    padding: 20px 50px;
+    text-align: center;
+}
+.form{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 350px;
+
+}
+.form-label{
+    text-transform: uppercase;
+}
+.input-tarea , .input-desc{
+    padding: 6px;
+
+}
+.add-btn{
+    height: 40px;
+    width: 200px;
+    margin-top: 10px;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+.enter-data{
+    padding: 10px;
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 40px;
+    background: white;
+    border-radius: 10px;
+}
+#lista-task{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-basis: 400px;
+    padding: 10px;
+    justify-content: space-around;
+    align-content: space-around;
+}
+#lista-task div{
+    padding-bottom: 10px;
+    border-radius: 10px;
+    padding: 15px;
+    background: rgb(253,255,253);
+    background: linear-gradient(180deg, rgba(253,255,253,1) 0%, rgba(208,227,209,1) 50%, rgba(192,209,180,1) 100%);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+}

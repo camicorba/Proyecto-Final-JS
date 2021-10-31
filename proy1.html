@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,400;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css" >
+    <link rel="stylesheet" href="estilos.css">
+    <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1 class="titulo">Proyecto JS</h1>
+        <h2 class="titulo-secundario">Camila Corbalan</h2>
+    </header>
+    <div>
+        <p class="parrafo-expl">En este proyecto, el usuario va a ingresar una tarea y descripcion mediante un formulario. Todos los datos se almacenaran y luego se mostraran debajo en cards. </p>
+    </div>
+    <div class="enter-data">
+        <form class="form" id="form-task">
+            <label class="form-label">Tarea</label>
+            <input id="input-tarea" type="text"> <br>
+            <label class="form-label">Descripcion</label>
+            <input id="input-desc" type="text"><br>
+            <div><button class="add-btn" id="add-btn">+</button></div>
+        </form>
+    </div>
+    
+    <div class="card-task" id="lista-task"> </div>
+
+
+    <script src="proy1.js"></script>
+</body>
+</html>
