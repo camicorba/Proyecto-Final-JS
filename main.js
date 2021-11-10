@@ -24,7 +24,6 @@ const create = (tarea) => {
 
 // //ACCEDO A LOS ELEMENTOS DEL DOM
 const listaTask = document.getElementById('lista-task')
-const formTask = document.getElementById('form-task')
 const inputName = document.getElementById('input-tarea')
 const inputDesc = document.getElementById('input-desc')
 
@@ -44,12 +43,11 @@ selectPriori.appendChild(fragment)
 
 //AGREGO LAS TAREAS
 for (let tarea of arraytask) {
-    $('.panel-card').append(`<div> <h3> ${tarea.name} </h3> ${tarea.desc} </div>`)
+    $('.panel-card').append(`<div> <h3> ${tarea.name} </h3> ${tarea.desc}<input type=image src="/img/delete.png" id="btn-delete"></input> </div> `)
 }
 
-//EVENT PARA AGREGAR TAREAS
-formTask.addEventListener('submit', (event) => {
-
+//AGREGAR TAREAS
+$('#add-btn').on('click', function(event){
     const name = inputName.value
     const priori = selectPriori.value
     const desc = inputDesc.value
@@ -61,7 +59,10 @@ formTask.addEventListener('submit', (event) => {
 
     event.preventDefault();
 })
-
+//ELIMINAR TAREAS
+$(document).on('click', '#btn-delete', function(){
+    $(this).parent().remove();
+})
 
 
 //FUNCION PARA VALIIDAR

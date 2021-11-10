@@ -71,3 +71,15 @@ header{
     width: 200px;
 
 }
+#btn-delete{
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 5px;
+}
+#btn-delete:hover{
+    background: #eb6079;
+    cursor: default;
+}
