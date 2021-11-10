@@ -65,10 +65,9 @@ header{
 #lista-task div{
     padding-bottom: 10px;
     border-radius: 10px;
+    border: black solid 1px;
     padding: 15px;
     background: rgb(253,255,253);
-    background: linear-gradient(180deg, rgba(253,255,253,1) 0%, rgba(208,227,209,1) 50%, rgba(192,209,180,1) 100%);
-    background-repeat: no-repeat;
-    background-size: contain;
+    width: 200px;
 
 }
