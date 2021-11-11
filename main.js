@@ -9,28 +9,15 @@ class Tarea{
 //GUARDO EL ARRAY EN EL STORAGE
 let arraytask = JSON.parse(localStorage.getItem('arrayTask')) || []
 
-//METODO PARA AGREGAR LOS TAREAS A LA LISTA
-const create = (tarea) => {
-    if (this.name.value == ""){
-        error.innerHTML = "Debe ingresar una tarea";
-        return error;
-    } else{
-        arraytask.push(tarea)
-        localStorage.setItem('arrayTask', JSON.stringify(arraytask))
-    }
-
-}
-
 
 // //ACCEDO A LOS ELEMENTOS DEL DOM
-const listaTask = document.getElementById('lista-task')
 const inputName = document.getElementById('input-tarea')
 const inputDesc = document.getElementById('input-desc')
 
+
+//AGREGO LOS SELECT DE PRIORIDADES
 const prioridades = ['Sin prioridad', 'Importante', 'Urgente']
 const selectPriori = document.getElementById('input-priori')
-
-//AGREGO ELEMENTOS DESDE DOM
 const fragment = document.createDocumentFragment();
 for (const prioridad of prioridades){
     const selecItem = document.createElement('OPTION')
@@ -38,12 +25,17 @@ for (const prioridad of prioridades){
     selecItem.textContent = prioridad
     fragment.appendChild(selecItem)
 }
-
 selectPriori.appendChild(fragment)
+
+$('#btn-inicial').click(() => {
+    $('#form-task').toggle('fast');
+})
+
+//EVENTO PARA MOSTRAR INPUT
 
 //AGREGO LAS TAREAS
 for (let tarea of arraytask) {
-    $('.panel-card').append(`<div> <h3> ${tarea.name} </h3> ${tarea.desc}<input type=image src="/img/delete.png" id="btn-delete"></input> </div> `)
+    $('.panel-card').append(`<div id=card> <h3> ${tarea.name} </h3> ${tarea.desc}<input type=image src="/img/delete.png" class="detele" id="btn-delete"></input> </div> `)
 }
 
 //AGREGAR TAREAS
@@ -53,51 +45,31 @@ $('#add-btn').on('click', function(event){
     const desc = inputDesc.value
 
     const tarea = new Tarea(name, priori, desc)
+    const nameValue = inputName.value
 
-    create(tarea);
-    show(tarea);
+    if (nameValue == ''){
+        $('#error').append('Debe ingresar una tarea')
+        event.preventDefault();
+    } else{
+        arraytask.push(tarea)
+        localStorage.setItem('arrayTask', JSON.stringify(arraytask))
+    }
+    // create(tarea);
 
-    event.preventDefault();
+
 })
+
 //ELIMINAR TAREAS
-$(document).on('click', '#btn-delete', function(){
-    $(this).parent().remove();
-})
+$('#card').on('click', '.delete', function(event){
+    $(this).hide('2000', function(){
+        $(this).remove();
+        arraytask.splice(this, 1)
+    });
+});
 
+// $(document).on('click', '#btn-delete', function(){
+//     $(this).parent().remove();
+// })
 
-//FUNCION PARA VALIIDAR
-// function validar() {
-//     let mensajeError = [];
-
-//     if (inputTarea.value === "" || inputTarea.value === null){
-//         mensajeError.push("Ingresa una tarea");     
-//     }
-//     error.innerHTML = mensajeError;
-// }
-
-//DECLARO LAS FUNCIONES QUE VOY A USAR EN LOS EVENTOS
-//Funcion Guardar
-// function guardarTarea(e) {
-//     let inputTarea = document.getElementById("input-tarea").value;
-//     let inputDesc = document.getElementById("input-desc").value;
-
-//     const task = {
-//         inputTarea,
-//         inputDesc
-//     };
-//     // validar();
-//     //agrego condicional para no agregar datos vacios
-//     if (localStorage.getItem("task") === "") {
-//         let tasks = [];
-//         tasks.push(task);
-//         localStorage.setItem("tasks", JSON.stringify(tasks));
-//     } else {
-//         let tasks = JSON.parse(localStorage.getItem("tasks"));
-//         tasks.push(task);
-//         localStorage.setItem("tasks", JSON.stringify(tasks));
-//     }
-
-//     e.preventDefault()
-// }
 
 

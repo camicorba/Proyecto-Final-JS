@@ -7,31 +7,24 @@
     <title>Document</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,400;1,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.min.css" >
     <link rel="stylesheet" href="estilos.css">
     <script src="js/bootstrap.min.js"></script>
 </head>
 <body>
-    <header>
-        <h1 class="titulo">Proyecto JS</h1>
-        <h2 class="titulo-secundario">Camila Corbalan</h2>
-    </header>
-    <div>
-        <p class="parrafo-expl">En este proyecto, el usuario va a ingresar una tarea, prioridad y descripcion mediante un formulario. Todos los datos se almacenaran y luego se mostraran debajo en cards. </p>
-    </div>
     <div class="enter-data">
+        <button class="form-label btn-tareas" id="btn-inicial" >+ AGREGAR TAREA</button>
         <form class="form" id="form-task">
-            <label class="form-label" >Tarea</label>
-            <input id="input-tarea" type="text">
-            <label class="form-label">Prioridad</label>
-            <select id="input-priori"></select>
-            <label class="form-label">Descripcion</label>
-            <textarea id="input-desc" type="text"></textarea>
+            <input class="input" id="input-tarea" type="text" placeholder="Nombre">
+            <select class="input" id="input-priori"></select>
+            <textarea class="input" id="input-desc" type="text" placeholder="Descripcion"></textarea>
+            <div id="error"></div>
             <div><button type="submit" class="btn btn-outline-secondary add-btn" id="add-btn">+</button></div>
         </form>
+
     </div>
-    <div id="error"></div>
+
     
     <div class="panel-card" id="lista-task"> 
     </div>
