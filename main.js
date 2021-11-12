@@ -27,10 +27,15 @@ for (const prioridad of prioridades){
 }
 selectPriori.appendChild(fragment)
 
+
 $('#btn-inicial').click(() => {
-    $('#form-task').toggle('fast');
+    $('#form-task').slideToggle(1000);
 })
 
+// $('#btn-inicial').click(function() {
+//     $(this).css('background','none')
+
+// })
 //EVENTO PARA MOSTRAR INPUT
 
 //AGREGO LAS TAREAS
@@ -69,6 +74,7 @@ $('#card').on('click', '.delete', function(event){
 
 // $(document).on('click', '#btn-delete', function(){
 //     $(this).parent().remove();
+arraytask.splice(1, )
 // })
 
 

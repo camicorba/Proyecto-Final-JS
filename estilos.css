@@ -28,17 +28,25 @@ header{
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    width: 350px;
-
-    display: none;
+    width: min-content;
+ 
 
 }
 .btn-tareas{
-    background-color: #69d0a3;
-    padding: 10px;
-    border-radius: 25px;
-    font-weight: bold;
+    position: absolute;
+    width: 250px;
+    height: 50px;
+    font-size: 15px;
+    margin-bottom: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 10px;
 }
+
+
 .input-tarea , .input-desc{
     padding: 6px;
 
@@ -46,19 +54,24 @@ header{
 /* ESTILO DEL FORM TOTAL */
 .enter-data{
     padding: 10px;
-    width: 300px;
+    width: 80%;
     margin: 0 auto;
     margin-top: 40px;
     border-radius: 10px;
+    /* display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center; */
 }
 #lista-task{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    flex-basis: 400px;
     padding: 10px;
     justify-content: space-around;
     align-content: space-around;
+    margin-top: 50px;
 }
 #lista-task div{
     padding-bottom: 10px;
@@ -78,11 +91,12 @@ header{
 }
 .input{
     border-radius: 5px;
-    margin: 5px;
-    padding: 10px;
+    margin: 2px;
+    padding: 7px;
     border: solid black 1px;
-    flex-basis: 350px;
+    /* flex-basis: 350px; */
     width: 350px;
+    display: block;
 }
 #btn-delete{
     display: block;
