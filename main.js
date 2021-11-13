@@ -27,16 +27,11 @@ for (const prioridad of prioridades){
 }
 selectPriori.appendChild(fragment)
 
-
+// ANIMACION PARA BOTON DE INICIO
 $('#btn-inicial').click(() => {
     $('#form-task').slideToggle(1000);
 })
 
-// $('#btn-inicial').click(function() {
-//     $(this).css('background','none')
-
-// })
-//EVENTO PARA MOSTRAR INPUT
 
 //AGREGO LAS TAREAS
 for (let tarea of arraytask) {
@@ -59,23 +54,12 @@ $('#add-btn').on('click', function(event){
         arraytask.push(tarea)
         localStorage.setItem('arrayTask', JSON.stringify(arraytask))
     }
-    // create(tarea);
-
-
 })
 
-//ELIMINAR TAREAS
-$('#card').on('click', '.delete', function(event){
-    $(this).hide('2000', function(){
-        $(this).remove();
-        arraytask.splice(this, 1)
-    });
-});
+$('#btn-delete').on('click', function(event){
+    console.log(event.parentNode);
+})
 
-// $(document).on('click', '#btn-delete', function(){
-//     $(this).parent().remove();
-arraytask.splice(1, )
-// })
 
 
 
