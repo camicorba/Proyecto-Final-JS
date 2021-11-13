@@ -57,5 +57,17 @@ $('#add-btn').on('click', function(event){
 })
 
 
+const eliminar = document.querySelectorAll('#btn-delete')
+function eliminarTarea(e){
+    let id=e.target.parentNode.id
+    arraytask.splice(id, 1)
+    localStorage.setItem('arrayTask', JSON.stringify(arraytask))
+    location.reload()
+}
+
+for (let i = 0; i < eliminar.length; i++) {
+    eliminar[i].addEventListener('click', eliminarTarea)
+}
+
 
 
