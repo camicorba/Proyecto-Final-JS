@@ -56,10 +56,6 @@ $('#add-btn').on('click', function(event){
     }
 })
 
-$('#btn-delete').on('click', function(event){
-    console.log(event.parentNode);
-})
-
 
 
 
