@@ -40,10 +40,17 @@ for (const prioridad of prioridades){
 }
 selectPriori.appendChild(fragment)
 
-// ANIMACION PARA BOTON DE INICIO
+// ANIMACION PARA BOTONES
 $('#btn-inicial').click(() => {
     $('#form-task').slideToggle(1000);
 })
+
+$('#btn-menu').on('click', function(){
+    $('.menu-bar').toggleClass('active')
+    $('.contenido').toggleClass('open')
+})
+
+
 
 const renderTareas = () => {
     for (let tasks of arraytask) {
