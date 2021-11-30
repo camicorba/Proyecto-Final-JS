@@ -28,10 +28,11 @@ body{
 }
 
 .contenido{
-    width: 100%;
-    position:fixed;
+    width: 80%;
+    position: relative;
     top: 80px;
-    right: 0px;
+    margin-right: auto;
+    margin-left: auto;
     box-sizing: border-box;
     padding-left: 50px;
     transition: all 0.2s;

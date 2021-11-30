@@ -57,7 +57,7 @@ const renderTareas = () => {
         let cardTarea = document.createElement('div');
         cardTarea.innerHTML = `<h3>${tasks.name}</h3>
         <p>${tasks.desc}</p>
-        <input type=image src="/img/delete.png" id="btn-delete" id="${tasks.name}"></input>
+        <input type=image src="img/delete.png" id="btn-delete" id="${tasks.name}"></input>
         `
 
         card.appendChild(cardTarea);
