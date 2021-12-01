@@ -52,17 +52,14 @@
             </li>
         </ul>
     </nav>
-    <div class="todo-list contenido">
-        <div class="content">
-            <form action="">
-                <input type="text" name="add" placeholder="Añadi un producto">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
-                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                  </svg>
-            </form>
-
-        </div>
-
+    <div class="contenido-lista">
+        <form action="" class="form-list">
+            <input id="input-list" type="text" name="add" class="input" placeholder="Añadi un producto">
+            <input type="image" src="img/plus-circle.svg" class="btn-list" id="btn-add-list"></input>
+            <div id="error"></div>
+        </form>
+        
+        <ol id="lista-todo"> </ol>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="cart.js"></script>
