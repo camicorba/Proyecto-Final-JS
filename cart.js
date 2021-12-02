@@ -12,7 +12,17 @@ const pushear = (lista) => {
     arraylist.push(lista);
     localStorage.setItem('arraylist', JSON.stringify(arraylist));
 }           
-
+const findOne = (todo) => {
+    todo = todo;
+    const list = arraylist.find(list => list.todo === todo);
+    return list
+}
+const eliminar = (todo) => {
+    const list = findOne(todo)
+    const index = arraylist.indexOf (list)
+    arraylist.splice(index, 1)
+    localStorage.setItem('arraylist', JSON.stringify(arraylist))
+}
 const renderLista = () => {
     for (let items of arraylist) {
         let itemList = document.createElement('li');
@@ -20,10 +30,10 @@ const renderLista = () => {
         <input type=image src="img/delete.png" id="btn-delete" id="${items.todo}"></input>
         `
         item.appendChild(itemList);
-        // itemList.onclick = () => {
-        //     eliminar(items.todo) 
-        //     document.location.reload()
-        // }
+        itemList.onclick = () => {
+            eliminar(items.todo) 
+            document.location.reload()
+        }
     }
 }
 renderLista();
@@ -38,11 +48,13 @@ add.addEventListener('click', (event) => {
     const lista = new Lista(todo);
 
     let listValue = inputList.value;
-    // if (listValue = ''){
-    //     $('#error').append('Debe ingresar un dato');
-    //     event.preventDefault()
-    // } else {
-    //     pushear(lista)
-    // }
-    pushear(lista);
+    if (inputList.value == ''){
+        $('#error').append('Debe ingresar un dato');
+        $('#error').fadeOut(2000);
+        event.preventDefault()
+    } else {
+        pushear(lista)
+
+    }
+
 })

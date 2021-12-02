@@ -19,6 +19,12 @@ body{
 .header-logo{
     text-align: center;
 }
+.header-logo a{
+    cursor: pointer;
+}
+a:visited{
+    color: inherit;
+}
 .header-text{
     text-transform: uppercase;
     font-size: 25px;
@@ -41,6 +47,9 @@ body{
 }
 .panel-card div{
     margin: 10px;
+}
+.panel-card h4{
+    border-left: green;
 }
 .form{
     text-align: center;
@@ -199,8 +208,7 @@ body{
     position: relative;
     width: 100%;
     top: 80px;
-    margin-left: auto;
-    margin-right: auto;
+    text-align: center;
 }
 .form-list{
     display: flex;
@@ -211,4 +219,15 @@ body{
 }
 #lista-todo{
     text-align: center;
+    margin: auto;
+    width: 250px;
+}
+#lista-todo li{
+    display: flex;
+    border-radius: 5px;
+    background-color: #fdfffd;
+    margin: 5px;
+    padding: 0px 5px;
+    align-items: center;
+    justify-content: space-between;
 }

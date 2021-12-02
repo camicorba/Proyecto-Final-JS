@@ -31,12 +31,14 @@ let id = 100
 //AGREGO LOS SELECT DE PRIORIDADES
 const prioridades = ['Sin prioridad', 'Importante', 'Urgente']
 const selectPriori = document.getElementById('input-priori')
+const priori = document.getElementsByName('option')
 const fragment = document.createDocumentFragment();
 for (const prioridad of prioridades){
     const selecItem = document.createElement('OPTION')
-    selecItem.setAttribute('value', prioridad.toLocaleLowerCase())
+    selecItem.setAttribute('value', prioridad.toLowerCase())
     selecItem.textContent = prioridad
     fragment.appendChild(selecItem)
+
 }
 selectPriori.appendChild(fragment)
 
@@ -55,21 +57,34 @@ $('#btn-menu').on('click', function(){
 const renderTareas = () => {
     for (let tasks of arraytask) {
         let cardTarea = document.createElement('div');
-        cardTarea.innerHTML = `<h3>${tasks.name}</h3>
+        cardTarea.innerHTML = `<h4>${tasks.name}</h4>
         <p>${tasks.desc}</p>
         <input type=image src="img/delete.png" id="btn-delete" id="${tasks.name}"></input>
         `
-
+        const prioridad = selectPriori.value
+        console.log(prioridad)
+        // cardTarea.className = prioridad
+        // cardTarea.className = 'card-div'
+       
         card.appendChild(cardTarea);
         cardTarea.onclick = () => {
             eliminar(tasks.name) 
             document.location.reload()
         }
+        if (prioridad == 'sin prioridad') {
+            cardTarea.className = 'sinprioridad'
+        } else {
+            if (prioridad == 'importante') {
+                cardTarea.className = 'importante'
+            } else {
+                cardTarea.className = 'urgente'
+            }
+        }
     }
 }
 renderTareas();
 
-//aca va el evento del formulacio
+//aca va el evento del formulario
 form.addEventListener('submit', (event) => {
     const name = inputName.value
     const priori = selectPriori.value
