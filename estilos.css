@@ -48,9 +48,7 @@ a:visited{
 .panel-card div{
     margin: 10px;
 }
-.panel-card h4{
-    border-left: green;
-}
+
 .form{
     text-align: center;
     margin-left: auto;
@@ -59,6 +57,18 @@ a:visited{
     display: flex;
     flex-direction: column;
     width: min-content;
+}
+.sin{
+    border-left: green solid 3px;
+    padding-left: 5px;
+}
+.importante{
+    border-left: yellow solid 3px;
+    padding-left: 5px;
+}
+.urgente{
+    border-left: red solid 3px;
+    padding-left: 5px;
 }
 
 .btn-tareas{

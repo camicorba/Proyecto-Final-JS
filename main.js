@@ -57,28 +57,15 @@ $('#btn-menu').on('click', function(){
 const renderTareas = () => {
     for (let tasks of arraytask) {
         let cardTarea = document.createElement('div');
-        cardTarea.innerHTML = `<h4>${tasks.name}</h4>
+        cardTarea.innerHTML = `<h4 class="${tasks.priori}">${tasks.name}</h4>
         <p>${tasks.desc}</p>
         <input type=image src="img/delete.png" id="btn-delete" id="${tasks.name}"></input>
         `
-        const prioridad = selectPriori.value
-        console.log(prioridad)
-        // cardTarea.className = prioridad
-        // cardTarea.className = 'card-div'
        
         card.appendChild(cardTarea);
         cardTarea.onclick = () => {
             eliminar(tasks.name) 
             document.location.reload()
-        }
-        if (prioridad == 'sin prioridad') {
-            cardTarea.className = 'sinprioridad'
-        } else {
-            if (prioridad == 'importante') {
-                cardTarea.className = 'importante'
-            } else {
-                cardTarea.className = 'urgente'
-            }
         }
     }
 }
